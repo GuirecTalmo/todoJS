@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./assets/css/reset.css" />
     <link rel="stylesheet" href="./assets/css/styles.css" />
-    <link rel="stylesheet" href="./assets/css/responsive.css" />
     <title>Todo list JavaScript</title>
   </head>
   <body>
@@ -13,43 +12,56 @@
       <header>
         <nav class="nav">
           <div class="nav__container">
-            <h1 class="nav__container--title">Todo List JavaScript</h1>
+            <h1 class="text-3xl font-bold underline">Todo List JavaScript</h1>
             <p id="date"></p>
-          </div>
-
-          <!-- <div class="word-waves">
-            <span>Todo List</span>
-            <span>Todo List</span>
-          </div> -->
-
-          <div class="switcher__container">
-            <p>Dark Mode</p>
-            <label class="switch">
-              <input id="switch" type="checkbox" />
-              <span class="slider round"></span>
-            </label>
           </div>
         </nav>
       </header>
-      <div class="container">
+
+      <div class="md:container md:mx-auto mt-6">
         <form class="container__form">
-          <input
-            type="text"
-            class="container__form--input"
-            placeholder="Add a Todo..."
-          />
-          <button type="submit" class="container__add-button">Create</button>
+          <div class="relative z-0 mb-6 w-full group">
+            <input
+              type="text"
+              name="floating_text"
+              id="floating_text"
+              class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-black dark:border-gray-600 dark:focus:border-grey-500 focus:outline-none focus:ring-0 focus:border-grey-600 peer container__form--input"
+              placeholder=" "
+              required
+            />
+            <label
+              for="floating_text"
+              class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-purple-600 peer-focus:dark:text-purple-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+              >Add a todo</label
+            >
+          </div>
+          <button
+            type="submit"
+            class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 container__add-button"
+          >
+            Create
+          </button>
         </form>
-        <ul class="items">
+      </div>
+
+      <div class="md:container md:mx-auto mt-6">
+        <ul class="list-none items">
           <li class="item" data-key="1594003133171">
             <input class="checkbox" type="checkbox" />
             Do some puzzle on Codingame !
-            <button class="delete-button">X</button>
+            <button
+              type="button"
+              class="delete-button text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-purple-800 font-medium rounded-full text-sm px-4 py-2.5 text-center mr-2 mb-2 float-right"
+            >
+              x
+            </button>
           </li>
         </ul>
       </div>
     </main>
 
     <script src="./assets/js/script.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="./assets/js/tailwind.config.js"></script>
   </body>
 </html>
